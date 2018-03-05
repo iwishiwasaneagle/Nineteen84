@@ -8,7 +8,7 @@ __pycache__/
 
 # Graphics
 *.png
-*.json
+
 
 # Distribution / packaging
 .Python
@@ -103,3 +103,8 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# Key storage
+*.json
+keys.py
+mycreds.ini
