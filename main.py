@@ -186,7 +186,7 @@ class Monitor:
                     counter += 1
                     time.sleep(wait)
                 else:
-                    self.logger.debug("Time till CD is over: %ds %s"%(round(self.lastCall-time.time(), 2), self.motion))
+                    #self.logger.debug("Time till CD is over: %ds %s"%(round(self.lastCall-time.time(), 2), self.motion))
                     time.sleep(5)
             else:
                 GPIO.output(self.LEDgreen, GPIO.HIGH)
