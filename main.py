@@ -85,7 +85,7 @@ class Monitor:
             else:
                 picFileName = picFileName+"_2"+".png"
 
-            cv.putText(img,time.strftime("%d/%m/%y %H:%M:%S"),(10,470), self.font, 1,(255,255,255),1)
+            cv.putText(img,time.strftime("%d/%m/%y %H:%M:%S %Z"),(10,470), self.font, 1,(255,255,255),1)
             cv.imwrite(self.piclocation+picFileName, img)
             self.logger.debug("Picture taken and saved under name %s @ %s"%(picFileName, self.piclocation))
             self.picBuff.append(picFileName)
@@ -150,6 +150,7 @@ class Monitor:
                     GPIO.output(self.LEDgreen, GPIO.HIGH)
 
                 if self.motion and self.lastCall<time.time():
+                    self.LEDgreenPWM.stop()
                     t = time.time()
 
                     if counter<self.modes["MotionFast"][1]:

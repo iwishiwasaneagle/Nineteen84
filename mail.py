@@ -34,7 +34,10 @@ class mail:
 
     def send(self):
         self.logger.info('Starting sending protocol')
-        time_ = str(time.strftime("%H:%M %d/%m/%y"))
+        if time.strftime("%Z") == "BST":
+            time_ = str(int(time.strftime("%H"))+1)+str(time.strftime(":%M %d/%m/%y"))
+        else:
+            time_ = str(time.strftime("%H:%M %d/%m/%y"))
         msg = MIMEMultipart()
         msg['From'] = self.from_addr
         msg['To'] = self.to_addr
