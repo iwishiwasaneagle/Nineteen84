@@ -6,5 +6,5 @@ Interfacing is done with a switch and 3 leds - green, amber and red. When the sy
 
 To use google drive, the pydrive library was used which has some weird command line authentication but so far I only had to do this on the first run. Since then it's cached the credentials in "mycreds.ini" file (obviously not uploaded). It also required an app to be registered with google and those details are saved in "client_secret.json". For email, the email library that comes with python was utilized and my credentials stored in "keys.py". 
 
-##TODO//
+## //TODO
 - Create config file integration (hard coded right now yikes...)
