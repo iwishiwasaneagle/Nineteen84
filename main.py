@@ -90,7 +90,6 @@ class Monitor:
             self.logger.debug("Picture taken and saved under name %s @ %s"%(picFileName, self.piclocation))
             self.picBuff.append(picFileName)
 
-
     def email(self, pics):
         self.mail.files = pics
         try:
@@ -147,7 +146,7 @@ class Monitor:
                     self.set_ = True
                 if self.motion == True and self.set_ == True:
                     self.LEDgreenPWM.stop()
-                    GPIO.output(self.LEDgreen, GPIO.HIGH)
+                    #GPIO.output(self.LEDgreen, GPIO.HIGH)
 
                 if self.motion and self.lastCall<time.time():
                     self.LEDgreenPWM.stop()
